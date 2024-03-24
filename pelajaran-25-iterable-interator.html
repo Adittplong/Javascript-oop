@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterabel Iterator</title>
+</head>
+<body>
+    <script>
+        class CounterIteratorRersult{
+            constructor(value, done){
+                this.value = value;
+                this.done = done;
+            }
+        }
+
+        class CounterInterator{
+            constructor(value, max){
+                this.value = value;
+                this.max = max;
+            }
+
+            next(){
+                try{
+                    if(this.value > this.max){
+                         return new CounterIteratorRersult(this.value, true)
+                    }else{
+                            return new CounterIteratorRersult(this.value. false)
+                    }
+                }finally{
+                    this.value++;
+                }
+            }
+        }
+
+        class Counter{
+            constructor(value, max){
+                this.value = value;
+                this.max = max;
+            }
+
+            [Symbol.iterator](){
+                return new CounterInterator(this.value, this.max);
+            }
+        }
+
+        const counter = new Counter(1, 20);
+        for (const value of counter) {
+            console.info(value);
+        }
+    </script>
+</body>
+</html>

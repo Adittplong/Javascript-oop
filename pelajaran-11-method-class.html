@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Class</title>
+</head>
+<body>
+    <script>
+       class Person{
+            constructor(name){
+                this.name=name;
+
+            }
+
+            sayhello(name){
+            console.info(`Hello ${name}, my name is ${this.name}`);
+        }
+        };
+
+
+        const aditya = new Person("adit");
+        console.info(aditya);
+        console.info(aditya.name); 
+        aditya.sayhello("Adit");
+    </script>
+</body>
+</html>

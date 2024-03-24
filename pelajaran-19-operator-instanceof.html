@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Instanceof</title>
+</head>
+<body>
+    <script>
+        {
+            class Employee{
+
+            }
+
+            class Manager{
+
+            }
+
+            const adit = new Employee();
+            const suarman = new Manager();
+
+            console.info(typeof budi);
+            console.info(typeof suarman);
+
+            console.info(adit instanceof Employee);
+            console.info(adit instanceof Manager);
+
+            console.info(suarman instanceof Employee);
+            console.info(suarman instanceof Manager);
+        }
+
+        class Employee{
+
+        }
+
+        class Manager extends Employee{
+
+        }
+
+        const adit = new Employee();
+        const suarman = new Manager();
+
+        console.info(typeof budi);
+        console.info(typeof suarman);
+
+        console.info(adit instanceof Employee);
+        console.info(adit instanceof Manager);
+
+        console.info(suarman instanceof Employee);
+        console.info(suarman instanceof Manager);
+        
+    </script>
+</body>
+</html>

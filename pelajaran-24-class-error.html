@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Error</title>
+</head>
+<body>
+    <script>
+            class ValidationError extends Error{
+                constructor(message, field){
+                    super(message);
+                    this.field = field;
+                }
+            }
+
+            class Mathutil{
+                static sum(...numbers){
+                    if (numbers.length === 0) {
+                        throw new ValidationError("Total Parameter harus lebih dari 0, Number :");
+                    }
+
+                    let total = 0;
+                    for (const number of numbers) {
+                        total += number;
+                    }
+                    return total;
+                }
+            }
+
+            try {
+                console.info(Mathutil.sum());
+                console.info("sukses") 
+            } catch (error) {
+                if (error instanceof ValidationError) {
+                        console.info(`Error di filed ${error.field} dengan error ${error.message}`)
+                    }else{
+                        console.info(`Terjadi Error : ${error.message}`);
+                    }
+            }finally{
+                console.info("Kode Program Selesai")
+            }
+        
+
+        
+            console.info("Selesai");
+
+        
+    </script>
+</body>
+</html>

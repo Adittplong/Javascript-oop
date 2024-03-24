@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+</head>
+<body>
+    <script>
+        class Mathutil{
+            static sum(...numbers){
+                if (numbers.length === 0) {
+                    throw new Error("Total Parameter harus lebih dari 0");
+                }
+
+                let total = 0;
+                for (const number of numbers) {
+                    total += number;
+                }
+                return total;
+            }
+        }
+
+        console.info(Mathutil.sum());
+        console.info("sukses")
+
+        const result = Mathutil.sum(1, 1, 1, 1, 1);
+        console.info(result)
+    </script>
+</body>
+</html>
